@@ -10948,11 +10948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Documents\\desaign restful web api\\TodoApi\\TodoApi.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Documents\\desaign restful web api\\TodoApi\\todoapi\\TodoApi.csproj",
       "projectName": "TodoApi",
-      "projectPath": "C:\\Users\\ASUS\\Documents\\desaign restful web api\\TodoApi\\TodoApi.csproj",
+      "projectPath": "C:\\Users\\ASUS\\Documents\\desaign restful web api\\TodoApi\\todoapi\\TodoApi.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\Documents\\desaign restful web api\\TodoApi\\obj\\",
+      "outputPath": "C:\\Users\\ASUS\\Documents\\desaign restful web api\\TodoApi\\todoapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
