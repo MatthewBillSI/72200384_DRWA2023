@@ -1,0 +1,53 @@
+﻿@page "/Bookstore"
+@inject HttpClient Http
+@inject NavigationManager UriHelper 
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject Microsoft.AspNetCore.Components.NavigationManager navigationManager
+@inject NavigationManager UriHelper
+
+<PageTitle>Book store</PageTitle>
+
+ 
+
+<p>This component demonstrates fetching data from the api server.</p>
+@if (bookitems == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>bookname.</th>
+                <th>Price.</th>
+                <th>Category</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in bookitems)
+            {
+                <tr>
+                    <td>@book.Id</td>
+                    <td>@book.BookName</td>
+                    <td>@book.Price</td>
+                    <td>@book.Category</td>
+                    <td>@book.Author</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private BookItem[]? bookitems;
+
+    protected override async Task OnInitializedAsync()
+    {
+        bookitems = await Http.GetFromJsonAsync<BookItem[]>("http://localhost:5180/api/Books");
+    }
+
+}

@@ -6,6 +6,16 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy  =>
+                      {
+                          policy.WithOrigins("http://localhost:5207");
+                      });
+});
 
 
 // Add services to the container.
@@ -82,6 +92,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 IConfiguration configuration = app.Configuration;
 IWebHostEnvironment environment = app.Environment;
+
+//tambah cors
+app.UseCors(MyAllowSpecificOrigins);
 
 app.MapControllers();
 

@@ -15,7 +15,7 @@ public class BooksController : ControllerBase
         _booksService = booksService;
 
     [HttpGet]
-    [Authorize]
+    //[Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -26,7 +26,7 @@ public class BooksController : ControllerBase
         await _booksService.GetAsync();
 
     [HttpGet("{id:length(24)}")]
-    [Authorize]
+    //[Authorize]
 
     public async Task<ActionResult<Book>> Get(string id)
     {
@@ -60,7 +60,7 @@ public class BooksController : ControllerBase
 /// <response code="400">If the item is null</response>
 
     [HttpPost]
-    [Authorize]
+    //[Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -75,7 +75,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpPut("{id:length(24)}")]
-        [Authorize]
+      //  [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -98,7 +98,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpDelete("{id:length(24)}")]
-        [Authorize]
+      //  [Authorize]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status401Unauthorized)]
